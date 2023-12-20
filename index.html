@@ -91,7 +91,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>java version “21.0.1” 2023-10-17 LTS  (jenkins编译要求java11、17、21)</p>
+        <p>[toc]</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>java version “21.0.1” 2023-10-17 LTS  (jenkins编译要求java11、17、21)</p>
 <p>Apache Maven 3.9.6</p>
 <p>Git 2.43.0</p>
 <h2 id="Jenkins安装-msi"><a href="#Jenkins安装-msi" class="headerlink" title="Jenkins安装(msi)"></a>Jenkins安装(msi)</h2><p><a target="_blank" rel="noopener" href="https://www.jenkins.io/download/">Jenkins_Download</a></p>
@@ -121,18 +122,62 @@
 <p><img src="https://s2.loli.net/2023/12/20/iPJdbqvEQZXk4RL.png" alt="image-20231220195523573"></p>
 </li>
 <li><p>完成安装。</p>
+<p><img src="https://s2.loli.net/2023/12/20/fyrk2I7smPtuOpn.png" alt="image-20231220195559025"></p>
 </li>
 </ol>
 <h3 id="Jenkins插件安装"><a href="#Jenkins插件安装" class="headerlink" title="Jenkins插件安装"></a>Jenkins插件安装</h3><p>安装maven插件、git插件、PublishOverSSH、Build Authorization Token RootVersion</p>
-<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/maven-plugin">Maven Integration plugin</a></p>
-<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/git">Git plugin</a></p>
-<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/build-token-root">Build Authorization Token RootVersion</a></p>
-<p>新增服务器</p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/maven-plugin">Maven Integration</a></p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/git">Git</a> (正常来讲前面没报错就已经是安装好的状态)</p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/build-token-root">Build Authorization Token Root</a> (用于webHook免密post)</p>
+<ol>
+<li>勾选对应的插件前方的方框，点击安装。</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/12/20/vqLCNwfXseaV7K8.png" alt="image-20231220200209036"></p>
+<p><img src="https://s2.loli.net/2023/12/20/MewsY59ZCm1xLRo.png" alt="image-20231220200416914"></p>
+<p><img src="https://s2.loli.net/2023/12/20/2LneSbJ1ldX4jAZ.png" alt="image-20231220200619390"></p>
+<ol start="2">
+<li><p>安装好重启jenkins (Manage Jenkins -&gt; Reload Configuration From Disk)</p>
+<p><img src="https://s2.loli.net/2023/12/20/ei6Y4rbQCtMy18X.png" alt="image-20231220200746758"></p>
+</li>
+</ol>
+<h4 id="maven插件配置"><a href="#maven插件配置" class="headerlink" title="maven插件配置"></a>maven插件配置</h4><ol>
+<li><p>进入设置界面</p>
+<p><img src="https://s2.loli.net/2023/12/20/gMsBDrJfjHxdYt8.png" alt="image-20231220202120388"></p>
+</li>
+<li><p>拉到页面最底端</p>
+<p><img src="https://s2.loli.net/2023/12/20/7QqoNcVD3mfj9sP.png" alt="image-20231220202223293"></p>
+</li>
+<li><p>输入你本地的mvn路径，也可以直接用自动安装(这里用本地的)</p>
+<p><img src="https://s2.loli.net/2023/12/20/iAxu1Pmh4Ucf2rl.png" alt="image-20231220202355568"></p>
+</li>
+</ol>
+<h3 id="部署一个项目"><a href="#部署一个项目" class="headerlink" title="部署一个项目"></a>部署一个项目</h3><ol>
+<li><p>新建item</p>
+<p><img src="https://s2.loli.net/2023/12/20/SiMY9y2d6FIaGkl.png" alt="image-20231220200858717"></p>
+</li>
+<li><p>以Manven项目构建(需要刚刚的maven插件)</p>
+<p><img src="https://s2.loli.net/2023/12/20/QUugvocFXCtBn7P.png" alt="image-20231220200954342"></p>
+</li>
+<li><p>添加仓库链接</p>
+<p><img src="https://s2.loli.net/2023/12/20/1BMOfKLEuG6j5Nm.png" alt="image-20231220201431506"></p>
+</li>
+<li><p>添加账号</p>
+<p><img src="https://s2.loli.net/2023/12/20/aN81LDeHO2UoGEq.png" alt="image-20231220201509865"><img src="https://s2.loli.net/2023/12/20/ERgliUfsWuGkPej.png" alt="image-20231220201651662"></p>
+<p><img src="https://s2.loli.net/2023/12/20/SynAiVdNuO3coFx.png" alt="image-20231220201739716"></p>
+</li>
+<li><p>选择部署的仓库分支</p>
+<p><img src="https://s2.loli.net/2023/12/20/4HN36DhkiybcsTj.png" alt="image-20231220201836831"></p>
+</li>
+<li><p>这时候就可以保存尝试Build了。</p>
+<p><img src="https://s2.loli.net/2023/12/20/c74NemZLHSOGC9P.png" alt="image-20231220202536837"></p>
+</li>
+</ol>
+<p>​	</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/20/jenkins/" data-id="clqdpwtv800020cvedd18c46a" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/20/jenkins/" data-id="clqdr58t50002movea5xu6xwt" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -171,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/text/" data-id="clqdpwtvd00030cve4lce36j2" data-title="脚本修改测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/text/" data-id="clqdr58t60003movebvhf862d" data-title="脚本修改测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -258,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/hexo/" data-id="clqdpwtv600010cve2c0a35rr" data-title="Hexo部署至github" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/hexo/" data-id="clqdr58t40001movecqp3cf5m" data-title="Hexo部署至github" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -309,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/hello-world/" data-id="clqdpwtv300000cveg7v3bfx1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/hello-world/" data-id="clqdr58t00000move6ndx30z0" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
