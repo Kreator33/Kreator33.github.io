@@ -91,11 +91,43 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>java version “21.0.1” 2023-10-17 LTS  (jenkins编译要求java11、17、21)</p>
+<p>Apache Maven 3.9.6</p>
+<p>Git 2.43.0</p>
+<h2 id="Jenkins安装-msi"><a href="#Jenkins安装-msi" class="headerlink" title="Jenkins安装(msi)"></a>Jenkins安装(msi)</h2><p><a target="_blank" rel="noopener" href="https://www.jenkins.io/download/">Jenkins_Download</a></p>
+<ol>
+<li>以本地系统服务安装</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/12/20/JOaA8wFRP3xcjvl.png" alt="image-20231220193427323"></p>
+<ol start="2">
+<li><p>修改jenkins端口，8080会和tomcat冲突(这里是8088)</p>
+<p><img src="https://s2.loli.net/2023/12/20/xGJRA8u3abn7sUp.png" alt="image-20231220193521579"></p>
+</li>
+<li><p>选择你的jdk路径(版本必须是java11、17、21)</p>
+<p><img src="https://s2.loli.net/2023/12/20/G1RlsxhKHun5bSI.png" alt="image-20231220194351256"></p>
+</li>
+<li><p>其余步骤”Next”即可。</p>
+</li>
+<li><p>在浏览器中访问”localhost:8088”，并进入到对应地址获取密码。</p>
+<p><img src="https://s2.loli.net/2023/12/20/BwgJiysWafx7QhZ.png" alt="image-20231220194508528"></p>
+</li>
+<li><p>以笔记本形式打开，并将其中的密码复制到输入框中并点继续。</p>
+<p><img src="https://s2.loli.net/2023/12/20/KDQtpaq2rbP9BRI.png" alt="image-20231220194622973"></p>
+</li>
+<li><p>安装推荐插件即可，安装失败也可以进Jenkins的plugins中安装。</p>
+<p><img src="https://s2.loli.net/2023/12/20/1SjsmAkfVlWb7Kn.png" alt="image-20231220194741914"></p>
+</li>
+</ol>
+<h3 id="Jenkins插件安装"><a href="#Jenkins插件安装" class="headerlink" title="Jenkins插件安装"></a>Jenkins插件安装</h3><p>安装maven插件、git插件、PublishOverSSH、Build Authorization Token RootVersion</p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/maven-plugin">Maven Integration plugin</a></p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/git">Git plugin</a></p>
+<p><a target="_blank" rel="noopener" href="https://plugins.jenkins.io/build-token-root">Build Authorization Token RootVersion</a></p>
+<p>新增服务器</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/20/jenkins/" data-id="clqdfs3dw0001vwvegvivhzep" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/20/jenkins/" data-id="clqdpmd33000184vedz9n4j0d" data-title="jenkins" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -134,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/text/" data-id="clqdfs3dz0003vwvehe79adeq" data-title="脚本修改测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/text/" data-id="clqdpmd35000384ve407ieco6" data-title="脚本修改测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -221,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/hexo/" data-id="clqdfs3dx0002vwve1hbnb3xi" data-title="Hexo部署至github" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/hexo/" data-id="clqdpmd34000284ve2cgo5qh7" data-title="Hexo部署至github" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -272,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kreator33.github.io/2023/12/19/hello-world/" data-id="clqdfs3ds0000vwve6l73fw6s" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://kreator33.github.io/2023/12/19/hello-world/" data-id="clqdpmd2y000084ve5xh827mw" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
